@@ -1,0 +1,48 @@
+package cn.itcast.shop.model;
+
+import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
+
+/**
+ * 一级分类的实体类对象
+ * 
+ * @author LC
+ *
+ */
+public class Category implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7541042548474800350L;
+	private Integer cid;
+	private String cname;
+
+	// 一级分类中存放二级分类的集合:
+	private Set<CategorySecond> categorySeconds = new HashSet<CategorySecond>();
+
+	public Integer getCid() {
+		return cid;
+	}
+
+	public void setCid(Integer cid) {
+		this.cid = cid;
+	}
+
+	public String getCname() {
+		return cname;
+	}
+
+	public void setCname(String cname) {
+		this.cname = cname;
+	}
+
+	public Set<CategorySecond> getCategorySeconds() {
+		return categorySeconds;
+	}
+
+	public void setCategorySeconds(Set<CategorySecond> categorySeconds) {
+		this.categorySeconds = categorySeconds;
+	}
+
+}
